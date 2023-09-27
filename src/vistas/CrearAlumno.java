@@ -106,7 +106,7 @@ public class CrearAlumno extends javax.swing.JInternalFrame {
 
         calendario.setBackground(new java.awt.Color(230, 244, 245));
         jPanel1.add(calendario);
-        calendario.setBounds(240, 220, 220, 28);
+        calendario.setBounds(240, 220, 220, 22);
 
         jbCrear.setBackground(new java.awt.Color(230, 244, 245));
         jbCrear.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -125,19 +125,34 @@ public class CrearAlumno extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jbCrear);
-        jbCrear.setBounds(470, 290, 92, 34);
+        jbCrear.setBounds(470, 290, 94, 28);
 
         jtfNombre.setBackground(new java.awt.Color(230, 244, 245));
+        jtfNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfNombreKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtfNombre);
-        jtfNombre.setBounds(240, 70, 220, 28);
+        jtfNombre.setBounds(240, 70, 220, 22);
 
         jtfApellido.setBackground(new java.awt.Color(230, 244, 245));
+        jtfApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfApellidoKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtfApellido);
-        jtfApellido.setBounds(240, 120, 220, 28);
+        jtfApellido.setBounds(240, 120, 220, 22);
 
         jtfDni.setBackground(new java.awt.Color(230, 244, 245));
+        jtfDni.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfDniKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtfDni);
-        jtfDni.setBounds(240, 170, 220, 28);
+        jtfDni.setBounds(240, 170, 220, 22);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -194,6 +209,39 @@ public class CrearAlumno extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         jbCrear.setBackground(new Color(223, 232, 225));
     }//GEN-LAST:event_jbCrearMouseExited
+
+    private void jtfNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfNombreKeyTyped
+        // TODO add your handling code here:
+        if(jtfNombre.getText().length()>49){
+            evt.consume();
+        }
+        char c = evt.getKeyChar();
+        if(c < 'A' || c > 'z'){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jtfNombreKeyTyped
+
+    private void jtfApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfApellidoKeyTyped
+        // TODO add your handling code here:
+        if(jtfApellido.getText().length()>49){
+            evt.consume();
+        }
+        char c = evt.getKeyChar();
+        if(c < 'A' || c > 'z'){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jtfApellidoKeyTyped
+
+    private void jtfDniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfDniKeyTyped
+        // TODO add your handling code here:
+        if(jtfDni.getText().length()>10){
+            evt.consume();
+        }
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jtfDniKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
