@@ -322,7 +322,7 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
                 String nombre = jtfNombre.getText();
                 String apellido = jtfApellido.getText();
                 LocalDate fecha = calendario.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro de modificar esta materia?", "Confirmación", JOptionPane.YES_NO_OPTION);
+                int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro de modificar este alumno?", "Confirmación", JOptionPane.YES_NO_OPTION);
                 if (resp == JOptionPane.YES_NO_OPTION) {
                     Alumno alu = new Alumno(id, dni, apellido, nombre, fecha, estado);
                     AlumnoData alumnoData = new AlumnoData();
