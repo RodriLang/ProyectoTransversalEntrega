@@ -283,8 +283,8 @@ private Materia materia;
     }//GEN-LAST:event_jtNotaActionPerformed
 
     private void jbAsignarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAsignarActionPerformed
-        if (Integer.parseInt(jtNota.getText())>=0&&Integer.parseInt(jtNota.getText())<=10) {
-        inscData.actualizarNota(alumno.getId(), materia.getId(), Integer.parseInt(jtNota.getText()));                 
+        if (Double.parseDouble(jtNota.getText())>=0&&Double.parseDouble(jtNota.getText())<=10) {
+        inscData.actualizarNota(alumno.getId(), materia.getId(), Double.parseDouble(jtNota.getText()));                 
         limpiar();       
         }else{
         JOptionPane.showMessageDialog(this, "Nota no valida. Solo valores entre 0 y 10");
@@ -313,11 +313,24 @@ private Materia materia;
     }//GEN-LAST:event_jboxMateriasActionPerformed
 
     private void jtNotaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtNotaKeyTyped
-        char c =evt.getKeyChar();
-        if (c<'0'||c>'9')evt.consume();  
+         char c =evt.getKeyChar();
+        if (jtNota.getText().length()>=3) {
+           evt.consume();
+        }
+        if (jtNota.getText().length()==0||jtNota.getText().length()==2) {
+            if (c<'0'||c>'9'){
+            evt.consume();}else{
+            jbAsignar.setEnabled(true);
+        }
+        }else{
+        if (c!='.') {
+        if (c<'0'||c>'9'){
+            evt.consume();
+        } else
+           jbAsignar.setEnabled(true); }          
         else{
         jbAsignar.setEnabled(true);
-        }
+        }}
     }//GEN-LAST:event_jtNotaKeyTyped
 
     private void jtNota1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNota1ActionPerformed
