@@ -104,8 +104,13 @@ public class ModificarMateria extends javax.swing.JInternalFrame {
         jLabel2.setBounds(60, 60, 260, 30);
 
         jtfID.setBackground(new java.awt.Color(230, 244, 245));
+        jtfID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfIDKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtfID);
-        jtfID.setBounds(60, 100, 110, 28);
+        jtfID.setBounds(60, 100, 110, 22);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setText("NOMBRE");
@@ -118,12 +123,22 @@ public class ModificarMateria extends javax.swing.JInternalFrame {
         jLabel5.setBounds(60, 260, 30, 17);
 
         jtfNombre.setBackground(new java.awt.Color(230, 244, 245));
+        jtfNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfNombreKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtfNombre);
-        jtfNombre.setBounds(200, 190, 180, 28);
+        jtfNombre.setBounds(200, 190, 180, 22);
 
         jtfAnio.setBackground(new java.awt.Color(230, 244, 245));
+        jtfAnio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfAnioKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtfAnio);
-        jtfAnio.setBounds(200, 260, 180, 28);
+        jtfAnio.setBounds(200, 260, 180, 22);
 
         jbModificar.setBackground(new java.awt.Color(230, 244, 245));
         jbModificar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -142,7 +157,7 @@ public class ModificarMateria extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jbModificar);
-        jbModificar.setBounds(420, 280, 130, 30);
+        jbModificar.setBounds(420, 280, 132, 30);
 
         jbBuscar.setBackground(new java.awt.Color(230, 244, 245));
         jbBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscarMateria.png"))); // NOI18N
@@ -179,7 +194,7 @@ public class ModificarMateria extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jbLimpiar);
-        jbLimpiar.setBounds(450, 220, 102, 34);
+        jbLimpiar.setBounds(450, 220, 104, 28);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -275,6 +290,35 @@ public class ModificarMateria extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         jbLimpiar.setBackground(new Color(223, 232, 225));
     }//GEN-LAST:event_jbLimpiarMouseExited
+
+    private void jtfIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIDKeyTyped
+        // TODO add your handling code here:
+        if(jtfID.getText().length()>10){
+            evt.consume();
+        }
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jtfIDKeyTyped
+
+    private void jtfNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfNombreKeyTyped
+        // TODO add your handling code here:
+        if(jtfNombre.getText().length()>99){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jtfNombreKeyTyped
+
+    private void jtfAnioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfAnioKeyTyped
+        // TODO add your handling code here:
+        if(jtfAnio.getText().length()>10){
+            evt.consume();
+        }
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jtfAnioKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

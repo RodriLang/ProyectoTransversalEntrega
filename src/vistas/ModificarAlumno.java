@@ -6,6 +6,7 @@ package vistas;
 
 import AccesoADatos.AlumnoData;
 import Entidades.Alumno;
+import com.toedter.calendar.JTextFieldDateEditor;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -66,8 +67,8 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
             }
         });
 
-        jtfID.setEnabled(false);
-        jtfDNI.setEnabled(false);
+         JTextFieldDateEditor editor = (JTextFieldDateEditor) calendario.getDateEditor(); //se convierte el jDateChooser en jTextFieldDateEditor para desactivar la edicion del campo de texto
+        editor.setEditable(false);
     }
 
     /**
@@ -79,14 +80,10 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jrbID = new javax.swing.JRadioButton();
-        jrbDNI = new javax.swing.JRadioButton();
-        jtfID = new javax.swing.JTextField();
-        jtfDNI = new javax.swing.JTextField();
+        jtfDatos = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -98,6 +95,7 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         calendario = new com.toedter.calendar.JDateChooser();
         jbLimpiar = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setClosable(true);
         setTitle("Alumno");
@@ -117,35 +115,14 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(60, 40, 260, 30);
 
-        buttonGroup1.add(jrbID);
-        jrbID.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jrbID.setText("ID");
-        jrbID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jrbIDActionPerformed(evt);
+        jtfDatos.setBackground(new java.awt.Color(230, 244, 245));
+        jtfDatos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfDatosKeyTyped(evt);
             }
         });
-        jPanel1.add(jrbID);
-        jrbID.setBounds(60, 80, 36, 18);
-
-        buttonGroup1.add(jrbDNI);
-        jrbDNI.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jrbDNI.setText("DNI");
-        jrbDNI.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jrbDNIActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jrbDNI);
-        jrbDNI.setBounds(200, 80, 46, 18);
-
-        jtfID.setBackground(new java.awt.Color(230, 244, 245));
-        jPanel1.add(jtfID);
-        jtfID.setBounds(60, 110, 110, 28);
-
-        jtfDNI.setBackground(new java.awt.Color(230, 244, 245));
-        jPanel1.add(jtfDNI);
-        jtfDNI.setBounds(200, 110, 110, 28);
+        jPanel1.add(jtfDatos);
+        jtfDatos.setBounds(180, 100, 110, 22);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setText("NOMBRE");
@@ -163,16 +140,31 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
         jLabel5.setBounds(60, 210, 68, 17);
 
         jtfNombre.setBackground(new java.awt.Color(230, 244, 245));
+        jtfNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfNombreKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtfNombre);
-        jtfNombre.setBounds(200, 170, 180, 28);
+        jtfNombre.setBounds(200, 170, 180, 22);
 
         jtfApellido.setBackground(new java.awt.Color(230, 244, 245));
+        jtfApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfApellidoKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtfApellido);
-        jtfApellido.setBounds(200, 210, 180, 28);
+        jtfApellido.setBounds(200, 210, 180, 22);
 
         jtfDni.setBackground(new java.awt.Color(230, 244, 245));
+        jtfDni.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfDniKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtfDni);
-        jtfDni.setBounds(200, 250, 180, 28);
+        jtfDni.setBounds(200, 250, 180, 22);
 
         jbModificar.setBackground(new java.awt.Color(230, 244, 245));
         jbModificar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -191,7 +183,7 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jbModificar);
-        jbModificar.setBounds(420, 280, 130, 30);
+        jbModificar.setBounds(420, 280, 132, 30);
 
         jbBuscar.setBackground(new java.awt.Color(230, 244, 245));
         jbBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscarUsuario.png"))); // NOI18N
@@ -218,7 +210,7 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
 
         calendario.setBackground(new java.awt.Color(230, 244, 245));
         jPanel1.add(calendario);
-        calendario.setBounds(200, 290, 180, 28);
+        calendario.setBounds(200, 290, 180, 22);
 
         jbLimpiar.setBackground(new java.awt.Color(230, 244, 245));
         jbLimpiar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -237,7 +229,11 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jbLimpiar);
-        jbLimpiar.setBounds(450, 210, 102, 34);
+        jbLimpiar.setBounds(450, 210, 104, 28);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "DNI" }));
+        jPanel1.add(jComboBox1);
+        jComboBox1.setBounds(80, 100, 72, 22);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -263,18 +259,6 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
         jbModificar.setBackground(new Color(223, 232, 225));
     }//GEN-LAST:event_jbModificarMouseExited
 
-    private void jrbIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbIDActionPerformed
-        // TODO add your handling code here:
-        jtfID.setEnabled(true);
-        jtfDNI.setEnabled(false);
-    }//GEN-LAST:event_jrbIDActionPerformed
-
-    private void jrbDNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbDNIActionPerformed
-        // TODO add your handling code here:
-        jtfDNI.setEnabled(true);
-        jtfID.setEnabled(false);
-    }//GEN-LAST:event_jrbDNIActionPerformed
-
     private void jbBuscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbBuscarMouseEntered
         // TODO add your handling code here:
         jbBuscar.setBackground(new Color(2, 64, 126));
@@ -287,12 +271,26 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
 
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
         // TODO add your handling code here:
-        if (jtfDNI.getText().isEmpty() || jtfID.getText().isEmpty()) {
+        if (jtfDatos.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Complete los campos vacíos");
         } else {
             try {
-                if (jrbID.isSelected()) {
-                    int id = Integer.parseInt(jtfID.getText());
+                if ("DNI".equals(jComboBox1.getSelectedItem())) {
+                    int DNI = Integer.parseInt(jtfDatos.getText());
+                    AlumnoData alu = new AlumnoData();
+                    Alumno alumnoEncontrado = alu.buscarAlumnoDni(DNI);
+                    if (alumnoEncontrado != null) {
+                        String id = String.valueOf(alumnoEncontrado.getId());
+                        jtfNombre.setText(alumnoEncontrado.getNombre());
+                        jtfApellido.setText(alumnoEncontrado.getApellido());
+                        String dni = String.valueOf(alumnoEncontrado.getDni());
+                        jtfDni.setText(dni);
+                        LocalDate localDate = alumnoEncontrado.getFechaNacimiento();
+                        Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+                        calendario.setDate(date);
+                    }
+                } else{
+                    int id = Integer.parseInt(jtfDatos.getText());
                     AlumnoData alu = new AlumnoData();
                     Alumno alumnoEncontrado = alu.buscarAlumnoId(id);
                     if (alumnoEncontrado != null) {
@@ -304,28 +302,10 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
                         Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
                         calendario.setDate(date);//
                     }
-                } else {
-                    int DNI = Integer.parseInt(jtfDNI.getText());
-                    AlumnoData alu = new AlumnoData();
-                    Alumno alumnoEncontrado = alu.buscarAlumnoDni(DNI);
-                    if (alumnoEncontrado != null) {
-                        String id = String.valueOf(alumnoEncontrado.getId());
-                        jtfID.setText(id);
-                        jtfID.setEnabled(true);
-                        jtfID.setEditable(false);
-                        jtfNombre.setText(alumnoEncontrado.getNombre());
-                        jtfApellido.setText(alumnoEncontrado.getApellido());
-                        String dni = String.valueOf(alumnoEncontrado.getDni());
-                        jtfDni.setText(dni);
-                        LocalDate localDate = alumnoEncontrado.getFechaNacimiento();
-                        Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-                        calendario.setDate(date);
-                    }
                 }
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(null, "Ingrese solo números");
-                jtfID.setText("");
-                jtfDNI.setText("");
+                jtfDatos.setText("");
             }
         }
     }//GEN-LAST:event_jbBuscarActionPerformed
@@ -337,7 +317,7 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
         } else {
             try {
                 boolean estado = true;
-                int id = Integer.parseInt(jtfID.getText());
+                int id = Integer.parseInt(jtfDatos.getText());
                 int dni = Integer.parseInt(jtfDni.getText());
                 String nombre = jtfNombre.getText();
                 String apellido = jtfApellido.getText();
@@ -358,8 +338,7 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
 
     private void jbLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLimpiarActionPerformed
         // TODO add your handling code here:
-        jtfID.setText("");
-        jtfDNI.setText("");
+        jtfDatos.setText("");
         jtfNombre.setText("");
         jtfApellido.setText("");
         jtfDni.setText("");
@@ -377,10 +356,54 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
         jbLimpiar.setBackground(new Color(223, 232, 225));
     }//GEN-LAST:event_jbLimpiarMouseExited
 
+    private void jtfDatosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfDatosKeyTyped
+        // TODO add your handling code here:
+         if(jtfDni.getText().length()>10){
+            evt.consume();
+        }
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jtfDatosKeyTyped
+
+    private void jtfNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfNombreKeyTyped
+        // TODO add your handling code here:
+        if(jtfNombre.getText().length()>49){
+            evt.consume();
+        }
+        char c = evt.getKeyChar();
+        if(c < 'A' || c > 'z'){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jtfNombreKeyTyped
+
+    private void jtfApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfApellidoKeyTyped
+        // TODO add your handling code here:
+        if(jtfApellido.getText().length()>49){
+            evt.consume();
+        }
+        char c = evt.getKeyChar();
+        if(c < 'A' || c > 'z'){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jtfApellidoKeyTyped
+
+    private void jtfDniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfDniKeyTyped
+        // TODO add your handling code here:
+          if(jtfDni.getText().length()>10){
+            evt.consume();
+        }
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jtfDniKeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
     private com.toedter.calendar.JDateChooser calendario;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -391,12 +414,9 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
     private javax.swing.JButton jbBuscar;
     private javax.swing.JButton jbLimpiar;
     private javax.swing.JButton jbModificar;
-    private javax.swing.JRadioButton jrbDNI;
-    private javax.swing.JRadioButton jrbID;
     private javax.swing.JTextField jtfApellido;
-    private javax.swing.JTextField jtfDNI;
+    private javax.swing.JTextField jtfDatos;
     private javax.swing.JTextField jtfDni;
-    private javax.swing.JTextField jtfID;
     private javax.swing.JTextField jtfNombre;
     // End of variables declaration//GEN-END:variables
 }

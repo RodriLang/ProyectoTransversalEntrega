@@ -15,6 +15,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author joelb
@@ -76,7 +77,6 @@ public class EliminarMateria extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -108,8 +108,13 @@ public class EliminarMateria extends javax.swing.JInternalFrame {
         jLabel2.setBounds(60, 70, 200, 30);
 
         jtfID.setBackground(new java.awt.Color(230, 244, 245));
+        jtfID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfIDKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtfID);
-        jtfID.setBounds(280, 70, 110, 28);
+        jtfID.setBounds(280, 70, 110, 22);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setText("NOMBRE");
@@ -124,12 +129,12 @@ public class EliminarMateria extends javax.swing.JInternalFrame {
         jtfNombre.setEditable(false);
         jtfNombre.setBackground(new java.awt.Color(230, 244, 245));
         jPanel1.add(jtfNombre);
-        jtfNombre.setBounds(200, 170, 180, 28);
+        jtfNombre.setBounds(200, 170, 180, 22);
 
         jtfAnio.setEditable(false);
         jtfAnio.setBackground(new java.awt.Color(230, 244, 245));
         jPanel1.add(jtfAnio);
-        jtfAnio.setBounds(200, 230, 180, 28);
+        jtfAnio.setBounds(200, 230, 180, 22);
 
         jbEliminar.setBackground(new java.awt.Color(230, 244, 245));
         jbEliminar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -148,7 +153,7 @@ public class EliminarMateria extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jbEliminar);
-        jbEliminar.setBounds(440, 270, 115, 30);
+        jbEliminar.setBounds(440, 270, 117, 30);
 
         jbBuscar.setBackground(new java.awt.Color(230, 244, 245));
         jbBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscarMateria.png"))); // NOI18N
@@ -185,7 +190,7 @@ public class EliminarMateria extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jbLimpiar);
-        jbLimpiar.setBounds(450, 210, 102, 34);
+        jbLimpiar.setBounds(450, 210, 104, 28);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -223,12 +228,18 @@ public class EliminarMateria extends javax.swing.JInternalFrame {
 
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
         // TODO add your handling code here:
-        int id = Integer.parseInt(jtfID.getText());
-        MateriaData md = new MateriaData();
-        Materia materiaEncontrada = md.buscarMateria(id);
-        if (materiaEncontrada != null) {
-            jtfNombre.setText(materiaEncontrada.getNombre());
-            jtfAnio.setText(materiaEncontrada.getAnio()+"");//
+        if (jtfID.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Complete los campos vacíos");
+        } else {
+            jtfNombre.setEditable(false);
+            jtfAnio.setEditable(false);
+            int id = Integer.parseInt(jtfID.getText());
+            MateriaData md = new MateriaData();
+            Materia materiaEncontrada = md.buscarMateria(id);
+            if (materiaEncontrada != null) {
+                jtfNombre.setText(materiaEncontrada.getNombre());
+                jtfAnio.setText(materiaEncontrada.getAnio() + "");//
+            }
         }
     }//GEN-LAST:event_jbBuscarActionPerformed
 
@@ -265,9 +276,19 @@ public class EliminarMateria extends javax.swing.JInternalFrame {
         jbLimpiar.setBackground(new Color(223, 232, 225));
     }//GEN-LAST:event_jbLimpiarMouseExited
 
+    private void jtfIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIDKeyTyped
+        // TODO add your handling code here:
+        if (jtfID.getText().length() > 10) {
+            evt.consume();
+        }
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jtfIDKeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

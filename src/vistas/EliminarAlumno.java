@@ -6,6 +6,7 @@ package vistas;
 
 import AccesoADatos.AlumnoData;
 import Entidades.Alumno;
+import com.toedter.calendar.JTextFieldDateEditor;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -13,6 +14,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author joelb
@@ -24,6 +26,8 @@ public class EliminarAlumno extends javax.swing.JInternalFrame {
      */
     public EliminarAlumno() {
         initComponents();
+        JTextFieldDateEditor editor = (JTextFieldDateEditor) calendario.getDateEditor(); //se convierte el jDateChooser en jTextFieldDateEditor para desactivar la edicion del campo de texto
+        editor.setEditable(false);
         jLabel1.setOpaque(true);
         jLabel1.setBackground(new Color(2, 64, 126));
         jPanel1.setBackground(new Color(223, 232, 225));
@@ -110,8 +114,13 @@ public class EliminarAlumno extends javax.swing.JInternalFrame {
         jLabel2.setBounds(60, 70, 180, 30);
 
         jtfID.setBackground(new java.awt.Color(230, 244, 245));
+        jtfID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfIDKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtfID);
-        jtfID.setBounds(250, 70, 110, 28);
+        jtfID.setBounds(250, 70, 110, 22);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setText("NOMBRE");
@@ -130,15 +139,15 @@ public class EliminarAlumno extends javax.swing.JInternalFrame {
 
         jtfNombre.setBackground(new java.awt.Color(230, 244, 245));
         jPanel1.add(jtfNombre);
-        jtfNombre.setBounds(200, 170, 180, 28);
+        jtfNombre.setBounds(200, 170, 180, 22);
 
         jtfApellido.setBackground(new java.awt.Color(230, 244, 245));
         jPanel1.add(jtfApellido);
-        jtfApellido.setBounds(200, 210, 180, 28);
+        jtfApellido.setBounds(200, 210, 180, 22);
 
         jtfDni.setBackground(new java.awt.Color(230, 244, 245));
         jPanel1.add(jtfDni);
-        jtfDni.setBounds(200, 250, 180, 28);
+        jtfDni.setBounds(200, 250, 180, 22);
 
         jbEliminar.setBackground(new java.awt.Color(230, 244, 245));
         jbEliminar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -157,7 +166,7 @@ public class EliminarAlumno extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jbEliminar);
-        jbEliminar.setBounds(440, 280, 115, 30);
+        jbEliminar.setBounds(440, 280, 117, 30);
 
         jbBuscar.setBackground(new java.awt.Color(230, 244, 245));
         jbBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscarUsuario.png"))); // NOI18N
@@ -184,7 +193,7 @@ public class EliminarAlumno extends javax.swing.JInternalFrame {
 
         calendario.setBackground(new java.awt.Color(230, 244, 245));
         jPanel1.add(calendario);
-        calendario.setBounds(200, 290, 180, 28);
+        calendario.setBounds(200, 290, 180, 22);
 
         jbLimpiar.setBackground(new java.awt.Color(230, 244, 245));
         jbLimpiar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -203,7 +212,7 @@ public class EliminarAlumno extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jbLimpiar);
-        jbLimpiar.setBounds(450, 210, 102, 34);
+        jbLimpiar.setBounds(450, 210, 104, 28);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -241,17 +250,24 @@ public class EliminarAlumno extends javax.swing.JInternalFrame {
 
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
         // TODO add your handling code here:
-        int id = Integer.parseInt(jtfID.getText());
-        AlumnoData alu = new AlumnoData();
-        Alumno alumnoEncontrado = alu.buscarAlumnoId(id);
-        if (alumnoEncontrado != null) {
-            jtfNombre.setText(alumnoEncontrado.getNombre());
-            jtfApellido.setText(alumnoEncontrado.getApellido());
-            String dni = String.valueOf(alumnoEncontrado.getDni());
-            jtfDni.setText(dni);
-            LocalDate localDate = alumnoEncontrado.getFechaNacimiento();
-            Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-            calendario.setDate(date);//
+        if (jtfID.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Complete los campos vacíos");
+        } else {
+            jtfNombre.setEditable(false);
+            jtfApellido.setEditable(false);
+            jtfDni.setEditable(false);
+            int id = Integer.parseInt(jtfID.getText());
+            AlumnoData alu = new AlumnoData();
+            Alumno alumnoEncontrado = alu.buscarAlumnoId(id);
+            if (alumnoEncontrado != null) {
+                jtfNombre.setText(alumnoEncontrado.getNombre());
+                jtfApellido.setText(alumnoEncontrado.getApellido());
+                String dni = String.valueOf(alumnoEncontrado.getDni());
+                jtfDni.setText(dni);
+                LocalDate localDate = alumnoEncontrado.getFechaNacimiento();
+                Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+                calendario.setDate(date);//
+            }
         }
     }//GEN-LAST:event_jbBuscarActionPerformed
 
@@ -289,6 +305,17 @@ public class EliminarAlumno extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         jbLimpiar.setBackground(new Color(223, 232, 225));
     }//GEN-LAST:event_jbLimpiarMouseExited
+
+    private void jtfIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIDKeyTyped
+        // TODO add your handling code here:
+        if (jtfDni.getText().length() > 10) {
+            evt.consume();
+        }
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jtfIDKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

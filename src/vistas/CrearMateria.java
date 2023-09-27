@@ -100,15 +100,25 @@ public class CrearMateria extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jbCrear);
-        jbCrear.setBounds(450, 250, 92, 34);
+        jbCrear.setBounds(450, 250, 94, 28);
 
         jtfNombre.setBackground(new java.awt.Color(230, 244, 245));
+        jtfNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfNombreKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtfNombre);
-        jtfNombre.setBounds(230, 90, 220, 28);
+        jtfNombre.setBounds(230, 90, 220, 22);
 
         jtfAnio.setBackground(new java.awt.Color(230, 244, 245));
+        jtfAnio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtfAnioKeyTyped(evt);
+            }
+        });
         jPanel1.add(jtfAnio);
-        jtfAnio.setBounds(230, 160, 220, 28);
+        jtfAnio.setBounds(230, 160, 220, 22);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -161,6 +171,24 @@ public class CrearMateria extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         jbCrear.setBackground(new Color(223, 232, 225));
     }//GEN-LAST:event_jbCrearMouseExited
+
+    private void jtfNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfNombreKeyTyped
+        // TODO add your handling code here:
+        if(jtfNombre.getText().length()>99){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jtfNombreKeyTyped
+
+    private void jtfAnioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfAnioKeyTyped
+        // TODO add your handling code here:
+        if(jtfAnio.getText().length()>10){
+            evt.consume();
+        }
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jtfAnioKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
