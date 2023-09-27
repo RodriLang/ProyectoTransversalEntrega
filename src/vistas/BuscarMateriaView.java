@@ -20,13 +20,10 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import javax.swing.JOptionPane;
-import javax.swing.JScrollBar;
-
 public class BuscarMateriaView extends javax.swing.JInternalFrame {
 
     private DefaultTableModel modeloTabla;
@@ -702,7 +699,7 @@ public class BuscarMateriaView extends javax.swing.JInternalFrame {
             for (Inscripcion inscripcion : inscripciones) {
                 //si el idMateria de la inscripcion coincide con el de la materia seleccionada se obtiene su nota
                 if (inscripcion.getMateria().getId() == idMateria) {
-                    nota = (int) inscripcion.getNota() + "";
+                    nota = (double) inscripcion.getNota() + "";
                     if (nota.equals("0")) {
                         nota = "No asignada";
                     }

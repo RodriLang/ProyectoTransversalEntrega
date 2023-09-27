@@ -269,7 +269,7 @@
                 <StringItem index="0" value="&lt;Seleccione Orden&gt;"/>
                 <StringItem index="1" value="Por Nro ID"/>
                 <StringItem index="2" value="Por Nombre A-Z"/>
-                <StringItem index="3" value="Por nombre Z-A"/>
+                <StringItem index="3" value="Por Nombre Z-A"/>
                 <StringItem index="4" value="Por A&#xf1;o"/>
                 <StringItem index="5" value="Por cantidad de alumnos (ASC)"/>
                 <StringItem index="6" value="Por cantidad de alumnos (DES)"/>

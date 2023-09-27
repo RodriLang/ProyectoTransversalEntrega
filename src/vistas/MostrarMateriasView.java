@@ -201,7 +201,7 @@ public class MostrarMateriasView extends javax.swing.JInternalFrame {
 
         comboBoxOrdenar.setBackground(new java.awt.Color(223, 232, 225));
         comboBoxOrdenar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        comboBoxOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccione Orden>", "Por Nro ID", "Por Nombre A-Z", "Por nombre Z-A", "Por Año", "Por cantidad de alumnos (ASC)", "Por cantidad de alumnos (DES)" }));
+        comboBoxOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Seleccione Orden>", "Por Nro ID", "Por Nombre A-Z", "Por Nombre Z-A", "Por Año", "Por cantidad de alumnos (ASC)", "Por cantidad de alumnos (DES)" }));
         comboBoxOrdenar.setToolTipText("");
         comboBoxOrdenar.setOpaque(true);
         comboBoxOrdenar.addActionListener(new java.awt.event.ActionListener() {

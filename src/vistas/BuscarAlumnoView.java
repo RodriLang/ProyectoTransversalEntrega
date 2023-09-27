@@ -1,4 +1,3 @@
-
 package vistas;
 
 import AccesoADatos.AlumnoData;
@@ -12,18 +11,16 @@ import javax.swing.table.DefaultTableModel;
 import Entidades.Alumno;
 import Entidades.Inscripcion;
 
-
-
 public class BuscarAlumnoView extends javax.swing.JInternalFrame {
 
-    private DefaultTableModel modelo=new DefaultTableModel();
+    private DefaultTableModel modelo = new DefaultTableModel();
+
     public BuscarAlumnoView() {
         initComponents();
         cargarCombo();
         armarCabecera();
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -266,7 +263,10 @@ public class BuscarAlumnoView extends javax.swing.JInternalFrame {
 
     private void jComboDatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboDatoActionPerformed
         limpiarCampos();
-        String opcionDato=(String)jComboDato.getSelectedItem();
+        if(modelo.getRowCount()>0){
+            limpiarTabla();
+        }
+        String opcionDato = (String) jComboDato.getSelectedItem();
         jTOpcionDato.setText(opcionDato);
     }//GEN-LAST:event_jComboDatoActionPerformed
 
@@ -312,22 +312,24 @@ public class BuscarAlumnoView extends javax.swing.JInternalFrame {
 
             }
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Debe llenar el campo 'Ingrese Dato' para realizar una búsqueda." + ex.toString());
+            JOptionPane.showMessageDialog(this, "Debe llenar el campo 'Ingrese Dato' para realizar una búsqueda.");
+        } catch (NullPointerException ex) {
+            JOptionPane.showMessageDialog(this, "Vuelve a intentarlo. No está muerto quien pelea.");
         }
-//          } catch (NullPointerException ex) {
-//            JOptionPane.showMessageDialog(this,"Debe llenar el campo 'Ingrese Dato' para realizar una búsqueda."+ex.toString());
-//          }
 
 
     }//GEN-LAST:event_jBuscarActionPerformed
 
     private void jTDatoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTDatoKeyTyped
-        char c=evt.getKeyChar();
-        if(c<'0'|| c>'9')evt.consume();
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            evt.consume();
+        }
     }//GEN-LAST:event_jTDatoKeyTyped
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       limpiarCampos();
+        limpiarCampos();
+        limpiarTabla();
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
@@ -356,68 +358,70 @@ public class BuscarAlumnoView extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTidAlumno;
     private javax.swing.JTextField jTnombreAlumno;
     // End of variables declaration//GEN-END:variables
-   private void cargarCombo(){
+   private void cargarCombo() {
         jComboDato.addItem("DNI");
         jComboDato.addItem("ID");
-    
-    }
-   private void limpiarCampos(){
-       jTDato.setText("");
-       jTdni.setText(" ");
-       jTidAlumno.setText(" ");
-       jTapellido.setText(" ");
-       jTnombreAlumno.setText(" ");
-       jTfechaNac.setText(" ");
-       jTestado.setText(" ");
-       
-   }
-   
-  private void armarCabecera(){
-    modelo.addColumn("Materia");
-    modelo.addColumn("Año");
-    modelo.addColumn("Nota");
-    jTableMaterias.setModel(modelo);  
 
-}
-  private void llenarTablaId(int Id){
-      MateriaData mat=new MateriaData();
-      AlumnoData alu=new AlumnoData();
-      List<Inscripcion> inscripciones=new ArrayList<>();
-      InscripcionData insc= new InscripcionData(mat,alu);
-      inscripciones=insc.obtenerInscripcionesPorAlumno(Id);
-      
-       for (Inscripcion i:inscripciones){
-             modelo.addRow(new Object[]{
+    }
+
+    private void limpiarCampos() {
+        jTDato.setText("");
+        jTdni.setText(" ");
+        jTidAlumno.setText(" ");
+        jTapellido.setText(" ");
+        jTnombreAlumno.setText(" ");
+        jTfechaNac.setText(" ");
+        jTestado.setText(" ");
+
+    }
+
+    private void armarCabecera() {
+        modelo.addColumn("Materia");
+        modelo.addColumn("Año");
+        modelo.addColumn("Nota");
+        jTableMaterias.setModel(modelo);
+
+    }
+
+    private void llenarTablaId(int Id) {
+        MateriaData mat = new MateriaData();
+        AlumnoData alu = new AlumnoData();
+        List<Inscripcion> inscripciones = new ArrayList<>();
+        InscripcionData insc = new InscripcionData(mat, alu);
+        inscripciones = insc.obtenerInscripcionesPorAlumno(Id);
+
+        for (Inscripcion i : inscripciones) {
+            modelo.addRow(new Object[]{
                 i.getMateria().getNombre(),
                 i.getMateria().getAnio(),
                 i.getNota()
-                });
+            });
         }
-       //System.out.println(inscripciones.toString());
-  }
-  private void llenarTablaDni(int dni){
-      MateriaData mat=new MateriaData();
-      AlumnoData alu=new AlumnoData();
-      List<Inscripcion> inscripciones=new ArrayList<>();
-      InscripcionData insc= new InscripcionData(mat,alu);
-      inscripciones=insc.obtenerInscripcionesPorAlumno(dni);
-      
-       for (Inscripcion i:inscripciones){
-             modelo.addRow(new Object[]{
+        //System.out.println(inscripciones.toString());
+    }
+
+    private void llenarTablaDni(int dni) {
+        MateriaData mat = new MateriaData();
+        AlumnoData alu = new AlumnoData();
+        List<Inscripcion> inscripciones = new ArrayList<>();
+        InscripcionData insc = new InscripcionData(mat, alu);
+        inscripciones = insc.obtenerInscripcionesPorAlumno(dni);
+
+        for (Inscripcion i : inscripciones) {
+            modelo.addRow(new Object[]{
                 i.getMateria().getNombre(),
                 i.getMateria().getAnio(),
                 i.getNota()
-                });
+            });
         }
-       //System.out.println(inscripciones.toString());
-  }
-  
+        //System.out.println(inscripciones.toString());
+    }
+
     private void limpiarTabla() {
         for (int i = 0; i < jTableMaterias.getRowCount(); i++) {
             modelo.removeRow(i);
             i -= 1;
         }
     }
-   
-  
+
 }
