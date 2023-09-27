@@ -24,6 +24,7 @@ public class CrearAlumno extends javax.swing.JInternalFrame {
      */
     public CrearAlumno() {
         initComponents();
+        this.setSize(600, 400);
         JTextFieldDateEditor editor = (JTextFieldDateEditor) calendario.getDateEditor(); //se convierte el jDateChooser en jTextFieldDateEditor para desactivar la edicion del campo de texto
         editor.setEditable(false);
         jLabel1.setOpaque(true);

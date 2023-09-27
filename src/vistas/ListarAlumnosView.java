@@ -42,7 +42,7 @@ public class ListarAlumnosView extends javax.swing.JInternalFrame {
         jLabel5.setText("jLabel5");
 
         setClosable(true);
-        setPreferredSize(new java.awt.Dimension(910, 696));
+        setPreferredSize(null);
 
         jPanel1.setBackground(new java.awt.Color(223, 232, 225));
         jPanel1.setLayout(null);
@@ -51,6 +51,8 @@ public class ListarAlumnosView extends javax.swing.JInternalFrame {
 
         jLabel1.setBackground(new java.awt.Color(2, 64, 126));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("LISTAR ALUMNOS");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -58,9 +60,8 @@ public class ListarAlumnosView extends javax.swing.JInternalFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(351, 351, 351)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(359, Short.MAX_VALUE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 187, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,13 +73,15 @@ public class ListarAlumnosView extends javax.swing.JInternalFrame {
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 0, 890, 40);
 
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setText("Apellido:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(160, 90, 47, 16);
+        jLabel3.setBounds(160, 90, 70, 17);
 
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setText("Nombre:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(160, 160, 48, 16);
+        jLabel4.setBounds(160, 150, 70, 17);
 
         jTapellido.setBackground(new java.awt.Color(230, 244, 245));
         jTapellido.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -87,7 +90,7 @@ public class ListarAlumnosView extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jTapellido);
-        jTapellido.setBounds(250, 90, 220, 28);
+        jTapellido.setBounds(240, 90, 220, 28);
 
         jTnombre.setBackground(new java.awt.Color(230, 244, 245));
         jTnombre.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -96,7 +99,7 @@ public class ListarAlumnosView extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jTnombre);
-        jTnombre.setBounds(250, 160, 220, 28);
+        jTnombre.setBounds(240, 150, 220, 28);
 
         jTableAluXmat.setBackground(new java.awt.Color(230, 244, 245));
         jTableAluXmat.setModel(new javax.swing.table.DefaultTableModel(
@@ -113,17 +116,17 @@ public class ListarAlumnosView extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(jTableAluXmat);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(50, 250, 780, 190);
+        jScrollPane1.setBounds(20, 200, 650, 190);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

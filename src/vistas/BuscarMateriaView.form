@@ -118,7 +118,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="B&#xfa;squeda por Materia"/>
+                <Property name="text" type="java.lang.String" value="B&#xda;SQUEDA POR MATERIA"/>
               </Properties>
             </Component>
           </SubComponents>

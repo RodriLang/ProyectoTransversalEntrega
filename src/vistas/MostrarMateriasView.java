@@ -111,7 +111,7 @@ public class MostrarMateriasView extends javax.swing.JInternalFrame {
         radioButtonInactivas.setBounds(10, 30, 190, 30);
 
         panelFondo.add(panelMostrarMaterias);
-        panelMostrarMaterias.setBounds(30, 80, 200, 60);
+        panelMostrarMaterias.setBounds(30, 80, 0, 0);
 
         panelSuperior.setBackground(new java.awt.Color(2, 64, 126));
 
@@ -144,7 +144,7 @@ public class MostrarMateriasView extends javax.swing.JInternalFrame {
         labelTitulo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         labelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         labelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelTitulo.setText("Listado de Materias");
+        labelTitulo.setText("LISTADO DE MATERIAS");
 
         javax.swing.GroupLayout panelSuperiorLayout = new javax.swing.GroupLayout(panelSuperior);
         panelSuperior.setLayout(panelSuperiorLayout);

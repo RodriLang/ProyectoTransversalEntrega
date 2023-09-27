@@ -29,6 +29,7 @@ private Materia materia;
      */
     public AsignarNota() {
         initComponents();
+        this.setSize(600, 400);
         jboxAlumnos.addItem("Elegir alumno");
         modeloBoxAlumnos();        
         jboxMaterias.addItem("Elegir materia");

@@ -113,7 +113,7 @@ public class BuscarMateriaView extends javax.swing.JInternalFrame {
         labelTitulo.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         labelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         labelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelTitulo.setText("Búsqueda por Materia");
+        labelTitulo.setText("BÚSQUEDA POR MATERIA");
 
         javax.swing.GroupLayout panelSuperiorLayout = new javax.swing.GroupLayout(panelSuperior);
         panelSuperior.setLayout(panelSuperiorLayout);

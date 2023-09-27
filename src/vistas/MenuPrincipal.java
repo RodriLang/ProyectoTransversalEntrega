@@ -62,18 +62,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         return menuItemBuscarAlumno;
     }
 
-    public JMenuItem getMenuItemBuscarAlumno1() {
-        return menuItemMiCuenta;
-    }
-
-    public JMenuItem getMenuItemBuscarAlumno2() {
-        return menuItemCerrarSesion;
-    }
-
-    public JMenuItem getMenuItemBuscarAlumno3() {
-        return menuItemOp;
-    }
-
     public JMenuItem getMenuItemBuscarMateria() {
         return menuItemBuscarMateria;
     }
@@ -110,14 +98,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         return menuMateria;
     }
 
-    public JMenu getMenuOpciones() {
-        return menuOpciones;
-    }
-
-    public JMenu getMenuUsuario() {
-        return menuUsuario;
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -129,8 +109,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         panelEscritorio = new javax.swing.JPanel();
         escritorio = new javax.swing.JDesktopPane();
-        botonCrearUsuario = new javax.swing.JButton();
-        botonIniciarSesion = new javax.swing.JButton();
         labelFondoLogo = new javax.swing.JLabel();
         labelFooter = new javax.swing.JLabel();
         barraMenu = new javax.swing.JMenuBar();
@@ -151,11 +129,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         menuItemBuscarMateria = new javax.swing.JMenuItem();
         menuItemListarMateria = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        menuUsuario = new javax.swing.JMenu();
-        menuItemMiCuenta = new javax.swing.JMenuItem();
-        menuItemCerrarSesion = new javax.swing.JMenuItem();
-        menuOpciones = new javax.swing.JMenu();
-        menuItemOp = new javax.swing.JMenuItem();
         menuSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -172,62 +145,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         escritorio.setBackground(new java.awt.Color(223, 232, 225));
         escritorio.setEnabled(false);
 
-        botonCrearUsuario.setBackground(new java.awt.Color(223, 232, 225));
-        botonCrearUsuario.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        botonCrearUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agregar30px.png"))); // NOI18N
-        botonCrearUsuario.setText("CREAR USUARIO");
-        botonCrearUsuario.setContentAreaFilled(false);
-        botonCrearUsuario.setOpaque(true);
-        botonCrearUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botonCrearUsuarioMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearUsuarioMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                botonCrearUsuarioMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                botonCrearUsuarioMouseReleased(evt);
-            }
-        });
-        botonCrearUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonCrearUsuarioActionPerformed(evt);
-            }
-        });
-
-        botonIniciarSesion.setBackground(new java.awt.Color(223, 232, 225));
-        botonIniciarSesion.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        botonIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario30px.png"))); // NOI18N
-        botonIniciarSesion.setText(" INICIAR SESION ");
-        botonIniciarSesion.setContentAreaFilled(false);
-        botonIniciarSesion.setOpaque(true);
-        botonIniciarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botonIniciarSesionMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonIniciarSesionMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                botonIniciarSesionMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                botonIniciarSesionMouseReleased(evt);
-            }
-        });
-        botonIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonIniciarSesionActionPerformed(evt);
-            }
-        });
-
         labelFondoLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondoUlp.png"))); // NOI18N
 
-        escritorio.setLayer(botonCrearUsuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        escritorio.setLayer(botonIniciarSesion, javax.swing.JLayeredPane.DEFAULT_LAYER);
         escritorio.setLayer(labelFondoLogo, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
@@ -237,22 +156,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(escritorioLayout.createSequentialGroup()
                 .addGap(363, 363, 363)
                 .addComponent(labelFondoLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(179, 179, 179)
-                .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGap(374, 374, 374))
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(escritorioLayout.createSequentialGroup()
-                .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelFondoLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(escritorioLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(botonIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(botonCrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(labelFondoLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
@@ -260,7 +169,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         escritorio.setBounds(0, 0, 1200, 570);
 
         getContentPane().add(panelEscritorio);
-        panelEscritorio.setBounds(0, 0, 1200, 570);
+        panelEscritorio.setBounds(-1, 0, 1200, 570);
 
         labelFooter.setBackground(new java.awt.Color(15, 63, 119));
         labelFooter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -306,14 +215,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         menuItemCrearAlumno.setText("Nuevo");
         menuItemCrearAlumno.setOpaque(true);
         menuItemCrearAlumno.setPreferredSize(new java.awt.Dimension(111, 55));
-        menuItemCrearAlumno.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                menuItemCrearAlumnoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                menuItemCrearAlumnoMouseExited(evt);
-            }
-        });
         menuItemCrearAlumno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuItemCrearAlumnoActionPerformed(evt);
@@ -473,7 +374,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         menuItemBuscarAlumno.setBackground(new java.awt.Color(87, 116, 134));
         menuItemBuscarAlumno.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         menuItemBuscarAlumno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscarUsuario.png"))); // NOI18N
-        menuItemBuscarAlumno.setText("Bucar alumno");
+        menuItemBuscarAlumno.setText("Buscar alumno");
         menuItemBuscarAlumno.setOpaque(true);
         menuItemBuscarAlumno.setPreferredSize(new java.awt.Dimension(200, 55));
         menuItemBuscarAlumno.addActionListener(new java.awt.event.ActionListener() {
@@ -525,45 +426,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         barraMenu.add(menuConsultas);
 
         jMenu2.setEnabled(false);
-        jMenu2.setPreferredSize(new java.awt.Dimension(200, 55));
+        jMenu2.setPreferredSize(new java.awt.Dimension(300, 55));
         barraMenu.add(jMenu2);
-
-        menuUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cuenta.png"))); // NOI18N
-        menuUsuario.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        menuUsuario.setPreferredSize(new java.awt.Dimension(55, 19));
-
-        menuItemMiCuenta.setBackground(new java.awt.Color(87, 116, 134));
-        menuItemMiCuenta.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        menuItemMiCuenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario30px.png"))); // NOI18N
-        menuItemMiCuenta.setText("Mi cuenta");
-        menuItemMiCuenta.setOpaque(true);
-        menuItemMiCuenta.setPreferredSize(new java.awt.Dimension(200, 55));
-        menuUsuario.add(menuItemMiCuenta);
-
-        menuItemCerrarSesion.setBackground(new java.awt.Color(87, 116, 134));
-        menuItemCerrarSesion.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        menuItemCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/apagar.png"))); // NOI18N
-        menuItemCerrarSesion.setText("Cerrar sesión");
-        menuItemCerrarSesion.setOpaque(true);
-        menuItemCerrarSesion.setPreferredSize(new java.awt.Dimension(200, 55));
-        menuUsuario.add(menuItemCerrarSesion);
-
-        barraMenu.add(menuUsuario);
-
-        menuOpciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/opcionesIco.png"))); // NOI18N
-        menuOpciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        menuOpciones.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        menuOpciones.setPreferredSize(new java.awt.Dimension(50, 53));
-
-        menuItemOp.setBackground(new java.awt.Color(87, 116, 134));
-        menuItemOp.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        menuItemOp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario30px.png"))); // NOI18N
-        menuItemOp.setText("Mi cuenta");
-        menuItemOp.setOpaque(true);
-        menuItemOp.setPreferredSize(new java.awt.Dimension(200, 55));
-        menuOpciones.add(menuItemOp);
-
-        barraMenu.add(menuOpciones);
 
         menuSalir.setBackground(new java.awt.Color(15, 63, 119));
         menuSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.Ico.png"))); // NOI18N
@@ -600,38 +464,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void menuItemListarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemListarAlumnoActionPerformed
         mostrarInternalFrame(new ListarAlumnosView());
     }//GEN-LAST:event_menuItemListarAlumnoActionPerformed
-
-    private void botonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIniciarSesionActionPerformed
-
-        LoginView vistaLogin = new LoginView(this);
-        vistaLogin.setVisible(true);
-    }//GEN-LAST:event_botonIniciarSesionActionPerformed
-
-    private void menuItemCrearAlumnoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItemCrearAlumnoMouseEntered
-        menuItemCrearAlumno.setIcon(imgAgregarUsuarioGr);
-    }//GEN-LAST:event_menuItemCrearAlumnoMouseEntered
-
-    private void menuItemCrearAlumnoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItemCrearAlumnoMouseExited
-        menuItemCrearAlumno.setIcon(imgAgregarUsuarioCh);
-    }//GEN-LAST:event_menuItemCrearAlumnoMouseExited
-
-    private void botonIniciarSesionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSesionMouseEntered
-        botonIniciarSesion.setBackground(new Color(230, 244, 245));
-
-    }//GEN-LAST:event_botonIniciarSesionMouseEntered
-
-    private void botonIniciarSesionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSesionMouseExited
-        botonIniciarSesion.setBackground(new Color(223, 232, 225));
-
-    }//GEN-LAST:event_botonIniciarSesionMouseExited
-
-    private void botonCrearUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearUsuarioMouseEntered
-        botonCrearUsuario.setBackground(new Color(230, 244, 245));
-    }//GEN-LAST:event_botonCrearUsuarioMouseEntered
-
-    private void botonCrearUsuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearUsuarioMouseExited
-        botonCrearUsuario.setBackground(new Color(223, 232, 225));
-    }//GEN-LAST:event_botonCrearUsuarioMouseExited
 
     private void menuAlumnoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAlumnoMouseEntered
         menuAlumno.setBackground(new Color(59, 99, 133));
@@ -672,22 +504,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void menuSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSalirMouseExited
         menuSalir.setBackground(new Color(15, 63, 119));
     }//GEN-LAST:event_menuSalirMouseExited
-
-    private void botonIniciarSesionMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSesionMouseReleased
-        botonCrearUsuario.setBackground(new Color(230, 244, 245));
-    }//GEN-LAST:event_botonIniciarSesionMouseReleased
-
-    private void botonIniciarSesionMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSesionMousePressed
-        botonIniciarSesion.setBackground(new Color(170, 194, 205));
-    }//GEN-LAST:event_botonIniciarSesionMousePressed
-
-    private void botonCrearUsuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearUsuarioMousePressed
-        botonCrearUsuario.setBackground(new Color(170, 194, 205));
-    }//GEN-LAST:event_botonCrearUsuarioMousePressed
-
-    private void botonCrearUsuarioMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearUsuarioMouseReleased
-        botonCrearUsuario.setBackground(new Color(230, 244, 245));
-    }//GEN-LAST:event_botonCrearUsuarioMouseReleased
 
     private void menuSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSalirMouseClicked
         System.exit(0);
@@ -733,10 +549,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         mostrarInternalFrame(new ModificarAlumno());
     }//GEN-LAST:event_menuItemModifAlumnoActionPerformed
 
-    private void botonCrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearUsuarioActionPerformed
-        new RegistroView(this).setVisible(true);
-    }//GEN-LAST:event_botonCrearUsuarioActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -780,7 +592,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             escritorio.removeAll();
             escritorio.repaint();
             ventana.setVisible(true);
-            ventana.setLocation(escritorio.getWidth()/2-ventana.getWidth()/2, 70);
+            ventana.setLocation(escritorio.getWidth()/2-ventana.getWidth()/2, 30);
             escritorio.add(ventana);
             escritorio.add(labelFondoLogo);
             escritorio.add(labelFooter);
@@ -790,8 +602,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraMenu;
-    private javax.swing.JButton botonCrearUsuario;
-    private javax.swing.JButton botonIniciarSesion;
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JLabel labelFondoLogo;
@@ -804,20 +614,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItemBorrarMateria;
     private javax.swing.JMenuItem menuItemBuscarAlumno;
     private javax.swing.JMenuItem menuItemBuscarMateria;
-    private javax.swing.JMenuItem menuItemCerrarSesion;
     private javax.swing.JMenuItem menuItemCrearAlumno;
     private javax.swing.JMenuItem menuItemCrearMateria;
     private javax.swing.JMenuItem menuItemInscribir;
     private javax.swing.JMenuItem menuItemListarAlumno;
     private javax.swing.JMenuItem menuItemListarMateria;
-    private javax.swing.JMenuItem menuItemMiCuenta;
     private javax.swing.JMenuItem menuItemModifAlumno;
     private javax.swing.JMenuItem menuItemModifMateria;
-    private javax.swing.JMenuItem menuItemOp;
     private javax.swing.JMenu menuMateria;
-    private javax.swing.JMenu menuOpciones;
     private javax.swing.JMenu menuSalir;
-    private javax.swing.JMenu menuUsuario;
     private javax.swing.JPanel panelEscritorio;
     // End of variables declaration//GEN-END:variables
 }
