@@ -290,7 +290,8 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
                         calendario.setDate(date);
                     }
                 } else{
-                    int id = Integer.parseInt(jtfDatos.getText());
+                    int id;
+                    id= Integer.parseInt(jtfDatos.getText());
                     AlumnoData alu = new AlumnoData();
                     Alumno alumnoEncontrado = alu.buscarAlumnoId(id);
                     if (alumnoEncontrado != null) {
@@ -304,7 +305,7 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
                     }
                 }
             } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(null, "Ingrese solo números");
+                JOptionPane.showMessageDialog(null, "Vuelva a intentarlo. La segunda es la vencida!");
                 jtfDatos.setText("");
             }
         }
@@ -358,8 +359,8 @@ public class ModificarAlumno extends javax.swing.JInternalFrame {
 
     private void jtfDatosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfDatosKeyTyped
         // TODO add your handling code here:
-         if(jtfDni.getText().length()>10){
-            evt.consume();
+         if(jtfDatos.getText().length()>10){
+          evt.consume();        
         }
         char c = evt.getKeyChar();
         if(!Character.isDigit(c)){

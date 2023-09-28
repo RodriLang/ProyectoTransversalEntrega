@@ -132,6 +132,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jtfNombre">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f5" green="f4" red="e6" type="rgb"/>
             </Property>
@@ -144,6 +145,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jtfApellido">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f5" green="f4" red="e6" type="rgb"/>
             </Property>
@@ -156,6 +158,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jtfDni">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f5" green="f4" red="e6" type="rgb"/>
             </Property>
@@ -225,6 +228,7 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="f5" green="f4" red="e6" type="rgb"/>
             </Property>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

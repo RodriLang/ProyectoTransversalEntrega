@@ -100,7 +100,7 @@ public class CrearMateria extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jbCrear);
-        jbCrear.setBounds(450, 250, 94, 28);
+        jbCrear.setBounds(450, 250, 97, 31);
 
         jtfNombre.setBackground(new java.awt.Color(230, 244, 245));
         jtfNombre.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -109,7 +109,7 @@ public class CrearMateria extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jtfNombre);
-        jtfNombre.setBounds(230, 90, 220, 22);
+        jtfNombre.setBounds(230, 90, 220, 25);
 
         jtfAnio.setBackground(new java.awt.Color(230, 244, 245));
         jtfAnio.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -118,7 +118,7 @@ public class CrearMateria extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jtfAnio);
-        jtfAnio.setBounds(230, 160, 220, 22);
+        jtfAnio.setBounds(230, 160, 220, 25);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -180,8 +180,8 @@ public class CrearMateria extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jtfNombreKeyTyped
 
     private void jtfAnioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfAnioKeyTyped
-        // TODO add your handling code here:
-        if(jtfAnio.getText().length()>10){
+        // TODO add your handling code here:        
+        if(jtfAnio.getText().length()>0){
             evt.consume();
         }
         char c = evt.getKeyChar();

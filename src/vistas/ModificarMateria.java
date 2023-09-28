@@ -244,7 +244,7 @@ public class ModificarMateria extends javax.swing.JInternalFrame {
                     jtfAnio.setText(materiaEncontrada.getAnio() + "");
                 }
             } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(null, "Ingrese solo números");
+                JOptionPane.showMessageDialog(null, "Vuelva a intentarlo. A caballo regalado no se le miran los dientes");
                 jtfID.setText("");//
             }
         }
@@ -269,7 +269,7 @@ public class ModificarMateria extends javax.swing.JInternalFrame {
                     JOptionPane.showMessageDialog(null, "Operación cancelada", "Información", JOptionPane.INFORMATION_MESSAGE);
                 }
             } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(null, "Ingrese solo números");
+                JOptionPane.showMessageDialog(null, "Campos mal ingresados");
             }
         }
     }//GEN-LAST:event_jbModificarActionPerformed

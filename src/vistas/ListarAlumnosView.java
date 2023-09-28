@@ -42,7 +42,6 @@ public class ListarAlumnosView extends javax.swing.JInternalFrame {
         jLabel5.setText("jLabel5");
 
         setClosable(true);
-        setPreferredSize(null);
 
         jPanel1.setBackground(new java.awt.Color(223, 232, 225));
         jPanel1.setLayout(null);
@@ -88,18 +87,24 @@ public class ListarAlumnosView extends javax.swing.JInternalFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTapellidoKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTapellidoKeyTyped(evt);
+            }
         });
         jPanel1.add(jTapellido);
-        jTapellido.setBounds(240, 90, 220, 28);
+        jTapellido.setBounds(240, 90, 220, 25);
 
         jTnombre.setBackground(new java.awt.Color(230, 244, 245));
         jTnombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTnombreKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTnombreKeyTyped(evt);
+            }
         });
         jPanel1.add(jTnombre);
-        jTnombre.setBounds(240, 150, 220, 28);
+        jTnombre.setBounds(240, 150, 220, 25);
 
         jTableAluXmat.setBackground(new java.awt.Color(230, 244, 245));
         jTableAluXmat.setModel(new javax.swing.table.DefaultTableModel(
@@ -168,6 +173,20 @@ public class ListarAlumnosView extends javax.swing.JInternalFrame {
             }
         }
     }//GEN-LAST:event_jTnombreKeyReleased
+
+    private void jTapellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTapellidoKeyTyped
+       char c=evt.getKeyChar();
+        if (c < 'A' || c > 'z') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTapellidoKeyTyped
+
+    private void jTnombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTnombreKeyTyped
+    char c=evt.getKeyChar();
+        if (c < 'A' || c > 'z') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTnombreKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

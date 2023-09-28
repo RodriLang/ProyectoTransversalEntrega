@@ -322,6 +322,9 @@ public class BuscarAlumnoView extends javax.swing.JInternalFrame {
 
     private void jTDatoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTDatoKeyTyped
         char c = evt.getKeyChar();
+        if (jTDato.getText().length()>9) {
+            evt.consume();
+        }
         if (c < '0' || c > '9') {
             evt.consume();
         }

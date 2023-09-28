@@ -278,7 +278,7 @@ public class EliminarMateria extends javax.swing.JInternalFrame {
 
     private void jtfIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfIDKeyTyped
         // TODO add your handling code here:
-        if (jtfID.getText().length() > 10) {
+        if (jtfID.getText().length() > 3) {
             evt.consume();
         }
         char c = evt.getKeyChar();

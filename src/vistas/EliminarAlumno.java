@@ -120,7 +120,7 @@ public class EliminarAlumno extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jtfID);
-        jtfID.setBounds(250, 70, 110, 22);
+        jtfID.setBounds(250, 70, 110, 20);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setText("NOMBRE");
@@ -137,17 +137,20 @@ public class EliminarAlumno extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(60, 210, 68, 17);
 
+        jtfNombre.setEditable(false);
         jtfNombre.setBackground(new java.awt.Color(230, 244, 245));
         jPanel1.add(jtfNombre);
-        jtfNombre.setBounds(200, 170, 180, 22);
+        jtfNombre.setBounds(200, 170, 180, 20);
 
+        jtfApellido.setEditable(false);
         jtfApellido.setBackground(new java.awt.Color(230, 244, 245));
         jPanel1.add(jtfApellido);
-        jtfApellido.setBounds(200, 210, 180, 22);
+        jtfApellido.setBounds(200, 210, 180, 20);
 
+        jtfDni.setEditable(false);
         jtfDni.setBackground(new java.awt.Color(230, 244, 245));
         jPanel1.add(jtfDni);
-        jtfDni.setBounds(200, 250, 180, 22);
+        jtfDni.setBounds(200, 250, 180, 20);
 
         jbEliminar.setBackground(new java.awt.Color(230, 244, 245));
         jbEliminar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -166,7 +169,7 @@ public class EliminarAlumno extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jbEliminar);
-        jbEliminar.setBounds(440, 280, 117, 30);
+        jbEliminar.setBounds(440, 280, 119, 30);
 
         jbBuscar.setBackground(new java.awt.Color(230, 244, 245));
         jbBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscarUsuario.png"))); // NOI18N
@@ -192,8 +195,9 @@ public class EliminarAlumno extends javax.swing.JInternalFrame {
         jLabel6.setBounds(60, 290, 90, 17);
 
         calendario.setBackground(new java.awt.Color(230, 244, 245));
+        calendario.setEnabled(false);
         jPanel1.add(calendario);
-        calendario.setBounds(200, 290, 180, 22);
+        calendario.setBounds(200, 290, 180, 20);
 
         jbLimpiar.setBackground(new java.awt.Color(230, 244, 245));
         jbLimpiar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -212,7 +216,7 @@ public class EliminarAlumno extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jbLimpiar);
-        jbLimpiar.setBounds(450, 210, 104, 28);
+        jbLimpiar.setBounds(450, 210, 107, 31);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
